@@ -1,0 +1,1 @@
+VehicleOutput[] obstacles

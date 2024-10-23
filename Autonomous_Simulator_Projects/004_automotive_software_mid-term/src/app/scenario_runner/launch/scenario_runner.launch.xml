@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="ns1" default="ego"/>
+
+  <!-- Declare arguments as strings where appropriate -->
+  <arg name="num_of_lanes" default="3" />
+  <arg name="num_of_obstacles" default="3" />
+  <arg name="obstacle_init_s" default="50.0" />
+  <arg name="obstacle_detection_distance" default="20.0" />
+
+  <!-- Launch evaluation node -->
+  <node pkg="scenario_runner" exec="scenario_runner" name="scenario_runner_node" namespace="$(var ns1)" output="screen">
+    <param name="scenario_runner/num_of_lanes" value="$(var num_of_lanes)"/>
+    <param name="scenario_runner/num_of_obstacles" value="$(var num_of_obstacles)"/>
+    <param name="scenario_runner/obstacle_init_s" value="$(var obstacle_init_s)"/>
+    <param name="scenario_runner/obstacle_detection_distance" value="$(var obstacle_detection_distance)"/>
+  </node>
+
+</launch>
